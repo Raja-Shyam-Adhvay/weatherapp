@@ -44,7 +44,7 @@ class _CityScreenState extends State<CityScreen> {
                   style: const TextStyle(color: Colors.black),
                   decoration: kTextFieldInputDecoration,
                   onChanged: (value) {
-                    cityName = value; // Update cityName as user types
+                    cityName = value; 
                   },
                 ),
               ),
@@ -64,4 +64,5 @@ class _CityScreenState extends State<CityScreen> {
       ),
     );
   }
+
 }
