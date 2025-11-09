@@ -1,15 +1,13 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-// Your actual API Key is here.
-// NOTE: If you ever change the key, update the string below.
+// The actual API Key is here.
 const String apiKey = 'd60071b5aa3aee7e325a55ef25d0b5cb';
 const String openWeatherMapURL = 'https://api.openweathermap.org/data/2.5/weather';
 
 class WeatherModel {
   Future<dynamic> getCityWeather(String cityName) async {
-    // API key check is REMOVED. It is assumed the key above is valid.
-
+   
     Uri url = Uri.parse(
         '$openWeatherMapURL?q=$cityName&appid=$apiKey&units=metric'
     );
@@ -24,7 +22,6 @@ class WeatherModel {
   }
 
   Future<dynamic> getLocationWeather({required double latitude, required double longitude}) async {
-    // API key check is REMOVED. It is assumed the key above is valid.
 
     Uri url = Uri.parse(
         '$openWeatherMapURL?lat=$latitude&lon=$longitude&appid=$apiKey&units=metric'
@@ -71,4 +68,5 @@ class WeatherModel {
       return 'Bring a 🧥 just in case';
     }
   }
+
 }
