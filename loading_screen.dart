@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// Removed geolocator import
 import 'package:clima/screens/location_screen.dart';
 import 'package:clima/services/weather.dart';
 
@@ -16,27 +15,23 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();
-    // Renamed function to reflect its new, simplified purpose
     getHardcodedWeatherData();
   }
 
-  // NOTE: This function now bypasses all GPS/permission checks.
+  
   Future<void> getHardcodedWeatherData() async {
     // Hardcoded coordinates (e.g., London, UK)
     double latitude = 51.5074;
     double longitude = 0.1278;
 
     try {
-      // 1. Skip all Geolocator calls
-      // 2. Directly call the weather API with the hardcoded coordinates
+      // Directly call the weather API with the hardcoded coordinates
       var weatherData = await weatherModel.getLocationWeather(
         latitude: latitude,
         longitude: longitude,
       );
 
       if (weatherData != null) {
-        // Navigate to LocationScreen with the fetched data
-        // Use pushReplacement to clear the loading screen from the stack
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
           return LocationScreen(locationWeather: weatherData);
         }));
@@ -70,4 +65,5 @@ class _LoadingScreenState extends State<LoadingScreen> {
       ),
     );
   }
+
 }
