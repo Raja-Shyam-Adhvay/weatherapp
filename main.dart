@@ -11,8 +11,9 @@ class Clima extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(), // A dark theme suits the weather app!
-      home: const LoadingScreen(), // Our starting screen
+      theme: ThemeData.dark(), 
+      home: const LoadingScreen(),
     );
   }
 }
+
