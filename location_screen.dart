@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:clima/utilities/constants.dart';
 import 'package:clima/services/weather.dart';
-import 'package:clima/screens/city_screen.dart'; // Import the City Search Screen
-import 'package:clima/screens/loading_screen.dart'; // Import the Loading Screen for GPS refresh
+import 'package:clima/screens/city_screen.dart'; 
+import 'package:clima/screens/loading_screen.dart'; 
 
 class LocationScreen extends StatefulWidget {
   final dynamic locationWeather;
@@ -52,7 +52,7 @@ class _LocationScreenState extends State<LocationScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: const AssetImage('assets/images/location_background.jpg'), // Fixed image path
+            image: const AssetImage('assets/images/location_background.jpg'), 
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.white.withOpacity(0.8), BlendMode.dstATop),
@@ -67,7 +67,7 @@ class _LocationScreenState extends State<LocationScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  // Location Icon (Icons.near_me) -> GOES TO CITY SEARCH (Screen 2)
+                  // Location Icon  -> GOES TO CITY SEARCH (Screen 2)
                   TextButton(
                     onPressed: () async {
                       // Correctly navigates to the City Search Screen
@@ -85,11 +85,11 @@ class _LocationScreenState extends State<LocationScreen> {
                       color: Colors.white,
                     ),
                   ),
-                  // City Icon (Icons.location_city) -> REFRESHES GPS LOCATION
+                  // City Icon (Icons.location_city)
                   TextButton(
                     onPressed: () {
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                        return const LoadingScreen(); // Correctly navigates to LoadingScreen
+                        return const LoadingScreen(); 
                       }));
                     },
                     child: const Icon(
@@ -129,4 +129,5 @@ class _LocationScreenState extends State<LocationScreen> {
       ),
     );
   }
+
 }
